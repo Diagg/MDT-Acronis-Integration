@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+' // ***************************************************************************
+' // 
+' // Copyright (c) Microsoft Corporation.  All rights reserved.
+' // 
+' // Microsoft Deployment Toolkit Solution Accelerator
+' //
+' // File:      WelcomeWizMini_Choice.xml
+' // 
+' // Version:   6.3.8450.1000
+' // 
+' // Purpose:   Welcome wizard choice pane definition
+' // 
+' // ***************************************************************************
+
+-->
+<Wizard>
+	<Global>
+		<CustomScript>WelcomeWizMini_Choice.vbs</CustomScript>
+		<HideNavigation>true</HideNavigation>
+	</Global>
+
+
+	<Pane id="Ready" title="Welcome">
+
+		<ButtonNext>
+			<Label><![CDATA[<button accesskey=N style="display='none';" id=buttonNext language=vbscript onclick=ButtonNextClick><U>N</U>ext</button>]]></Label>
+		</ButtonNext>
+		<ButtonCancel>
+			<Label><![CDATA[<button accesskey=R id=buttonCancel language=vbscript onclick=window.close style="display='none';" ><U>R</U>eboot</button>]]></Label>
+		</ButtonCancel>
+		<ButtonPrev>
+			<Label><![CDATA[<button accesskey=B id=buttonPrev onclick="ButtonBackClick" style='display: none;' ><U>B</U>ack</button>]]></Label>
+		</ButtonPrev>
+
+		<Initialization><![CDATA[ WelcomeWizard_CustomInitialization ]]> </Initialization>
+		<InitializationCloseout><![CDATA[ WelcomeWizard_CustomInitializationCloseout ]]> </InitializationCloseout>
+		<Validation><![CDATA[ RunSelectedCommand ]]> </Validation>
+		<HideBackNext>true</HideBackNext>
+
+		<Body><![CDATA[
+
+<br/>
+			<div style="text-align: Center; height: 310px;">
+
+
+			<button style="background: inherit; background-image: url(obtnsel.png); width: 600px; height: 35px; border: 0px; font: 15px; font-weight: bold;" id="buttonItem1" 
+			title="Run the Microsoft Deployment Wizard to install an Operating System or perform other task."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd" onclick="RunSelCmd" ondblclick="RunSelCmd" onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run the Deployment Wizard to install a new Operating System</button>
+			<br/>
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem2" 
+			title="Run the Microsoft Windows Recovery Wizard (WinRE) to repair an existing installation of Windows."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run the Windows Recovery Wizard</button>
+			<br/>
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem3" 
+			title="Run Microsoft Diagnostics and Recovery Toolset (DaRT) tools."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run DaRT tools</button>
+			<br/>			
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem4" 
+			title="Run Acronis True Image to backup or restore hard drive."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run Acronis True Image</button>
+			<br/>
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem5" 
+			title="Run Acronis Disk Director to create, delete and resize hard drive partitions."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run Acronis Disk Director</button>
+			<br/>
+			
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem6" 
+			title="Run Explorer to manage files."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run Explorer</button>
+			<br/>
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem7" 
+			title="Run Notepad++ to edit files."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run Notepad++</button>
+			<br/>
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem8" 
+			title="Run WinPE Shell to enable full Environment."
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Run WinPE Shell</button>
+			<br/>			
+
+			<button style="background: inherit; background-image: url(obtnout.png); width: 600px; height: 35px;border: 0px;font: 15px; font-weight: bold;" id="buttonItem9" 
+			title="For advanced users"
+			onmouseover="RunSelCmd" onmouseout="RunSelCmd"  onclick="RunSelCmd" ondblclick="RunSelCmd"  onactivate="RunSelCmd" ondeactivate="RunSelCmd" 
+			>Exit to Command Prompt</button>
+			
+			</div>
+
+<br/>
+
+			<div style="text-align: center;">
+
+			<table>
+			<tr>
+				<td align=right>Keyboard Layout</td>
+				<td> <select id=WinPEKeyboard Name=KeyboardLocalePE style="width: 400px;" >
+					<option value="0409:00000409">United States</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align=right>Screen Resolution</td>
+				<td> <select id=WinPERes Name=ResPE style="width: 400px;" onChange="SetRes">
+					<option value="h640 v480 b32">640x480</option>
+					<option value="h720 v405 b32">720x405</option>
+					<option value="h800 v600 b32">800x600</option>
+					<option value="h852 v480 b32">852x480</option>
+					<option value="h960 v540 b32">960x540</option>
+					<option value="h1024 v576 b32">1024x576</option>
+					<option value="h1024 v768 b32">1024x768</option>
+					<option value="h1152 v864 b32">1152x864</option>
+					<option value="h1280 v720 b32">1280x720</option>
+					<option value="h1280 v1024 b32">1280x1024</option>
+					<option value="h1366 v768 b32">1366x768</option>
+					<option value="h1600 v900 b32">1600x900</option>
+					<option value="h1600 v1200 b32">1600x1200</option>
+					<option value="h1680 v1050 b32">1680x1050</option>
+					<option value="h1920 v1080 b32">1920x1080</option>
+					<option value="h2560 v1440 b32">2560x1440</option>
+					<option value="h3840 v2160 b32">3840x2160</option>
+					</select>
+				</td>
+			</tr>			
+			<tr>
+				<td align=right>Configure Static IP</td>
+				<td><input type=button value="Configure with Static IP Address..." onclick="configureStaticIP" title="For advanced users" /></td>
+			</tr>
+			</table>
+
+			</div>
+
+		]]>
+		</Body>
+	</Pane>
+
+</Wizard>
